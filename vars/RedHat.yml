@@ -1,0 +1,11 @@
+---
+
+# vars file for sap-netweaver-preconfigure-assert
+
+__sap_netweaver_preconfigure_assert_sapnotes:
+  - "2526952"
+
+__sap_netweaver_preconfigure_assert_packages:
+  - tuned-profiles-sap
+
+...

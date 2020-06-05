@@ -1,0 +1,8 @@
+---
+# defaults file for sap-netweaver-preconfigure-assert
+
+sap_netweaver_preconfigure_assert_ignore_errors: no
+
+sap_netweaver_preconfigure_assert_fail_if_not_enough_swap_space_configured: yes
+
+...

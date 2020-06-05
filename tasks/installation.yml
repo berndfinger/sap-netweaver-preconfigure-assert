@@ -1,0 +1,18 @@
+---
+# tasks file for sap-netweaver-preconfigure: installation
+
+- name: Get install status of tuned-profiles-sap
+  shell: yum info installed tuned-profiles-sap | awk '/Name/{n=$NF}/Version/{v=$NF}/Release/{r=$NF}/Description/{printf ("%s\n", n)}'
+  register: yum_result
+  changed_when: no
+  args:
+    warn: false
+
+- name: Assert that tuned-profiles-sap is installed
+  assert:
+    that:
+      - "'tuned-profiles-sap' in yum_result.stdout"
+    fail_msg: "Package tuned-profiles-sap is not installed."
+  ignore_errors: "{{ sap_netweaver_preconfigure_assert_ignore_errors|d(false) }}"
+
+...
