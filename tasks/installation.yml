@@ -12,7 +12,8 @@
   assert:
     that:
       - "'tuned-profiles-sap' in yum_result.stdout"
-    fail_msg: "Package tuned-profiles-sap is not installed."
+    fail_msg: "FAIL: Package tuned-profiles-sap is not installed!"
+    success_msg: "PASS: Package tuned-profiles-sap is installed."
   ignore_errors: "{{ sap_netweaver_preconfigure_assert_ignore_errors|d(false) }}"
 
 ...
