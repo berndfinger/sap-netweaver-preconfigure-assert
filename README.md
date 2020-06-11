@@ -43,6 +43,12 @@ Here is a simple playbook which will check if your RHEL system is configured cor
 ...
 ```
 
+For a compact output when running with variable `sap_netweaver_preconfigure_assert_ignore_errors` to `yes`, you may use:
+```yaml
+ansible-playbook -l remote_host sap-netweaver-assert.yml | awk '/SAP note/||/FAIL:/||/WARN/||/PASS:/{sub ("    \"msg\": ", ""); print}'
+
+```
+
 License
 -------
 
